@@ -1,17 +1,38 @@
 package es1;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        stringaPariDispari();
+        annoBisestile();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
     }
+
+    public static void stringaPariDispari() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci una stringa:");
+        String str = scanner.nextLine();
+        if (str.length() % 2 == 0) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+
+        }
+        scanner.close();
+    }
+
+    public static void annoBisestile() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci un anno:");
+        int anno = Integer.parseInt(scanner.nextLine());
+        if (anno % 4 == 0 && anno % 100 != 0 || anno % 400 == 0) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+
+        }
+        scanner.close();
+    }
+
 }
